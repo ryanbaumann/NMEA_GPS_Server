@@ -1,14 +1,8 @@
-## Strava_SegExp
-*powered by Strava and the Stravalib SDK*
+## NMEA GPS Server, written in Python
 
 
 ## Purpose
-Python library workaround for Strava API - returns all segments in a given lat/long bound.
-IN PROGRESS.
-
-
-## A Strava dev account is required
-See https://strava.com/developers for details
+Receive real-time GPS NMEA messages over the internet to a server.  Project the coordinates to local from WGS84 if necessary.  Store in a database.  
 
 
 ## Credits

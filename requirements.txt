@@ -1,6 +1,8 @@
 pandas
+
 numpy
-berrl
-geohash
-stravalib
-geohash
+
+pyproj
+sqlalchemy
+pymssql
+re
