@@ -1,8 +1,0 @@
-pandas
-
-numpy
-
-pyproj
-sqlalchemy
-pymssql
-re
