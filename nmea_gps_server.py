@@ -118,16 +118,14 @@ def transform_coords(dataframe):
     NAD83_ID_E = pyproj.Proj("+init=EPSG:2241")
     latitude = dataframe['latitude'].values
     longitude = dataframe['longitude'].values
-    try:  # !!! Update for each new coordinate system projection
-        if latitude >= 42.0000 and latitude <= 44.7600 and longitude >= -113.2400 and longitude <= -111.0500:
-            x, y = pyproj.transform(wgs84, NAD83_ID_E, longitude, latitude)
-            dataframe['coord_sys_n'] = coord_sys_n2
-        else:
-            x, y = pyproj.transform(wgs84, UTM13N, longitude, latitude)
-            dataframe['coord_sys_n'] = coord_sys_n
+    try:  
+        x, y = pyproj.transform(wgs84, UTM13N, longitude, latitude)
+        dataframe['coord_sys_n'] = coord_sys_n
     except:
-        print "projection error!  Assigning X and Y to zero"
+        print "projection error - lat/long are out of bounds for UTM13N!  Assigning X and Y to zero"
+        raise
         x, y = 0, 0
+        pass
 
     # Insert the new values into the dataframe
     dataframe['x'] = x
