@@ -1,7 +1,7 @@
 ## NMEA GPS Server, written in Python
 
 ## Purpose
-Receive real-time GPS NMEA messages over a network to a server.  Project the coordinates to local from WGS84 into a local coordinate system.  Store results in a database.  Scope - GPGGA NMEA messages only.
+Receive real-time GPS NMEA messages over a network to a server.  Project the coordinates to local from WGS84 into a local coordinate system.  Store results in a database.  Scope - NMEA GPGGA NMEA messages only.  
 
 
 ## Building
@@ -16,7 +16,7 @@ Receive real-time GPS NMEA messages over a network to a server.  Project the coo
 
 5) Run cmd "pip install -r requirements.txt"
 
-6) Run "python nmea_gps_server.py"
+If you have any errors installing the python files (especially on Windows), try installing the files from Wheels (pre-built distribution packages).  The python pre-built packages are included in the repo at /python_wheels.  To install a package, run command "pip install <path_to_wheels_file>"
 
 
 ## Configuring
@@ -25,6 +25,11 @@ Receive real-time GPS NMEA messages over a network to a server.  Project the coo
 
 2) Set server listening port on line 35.  Default is port 10110.  
 
+## Running
+
+CD to the rep directiory and run "python nmea_gps_server.py".  
+
+--The server will listen for and store GPGGA NMEA messages sent to the configured port (default 10110).  The data will be stored in the database and table configured in lines 22-28 of nmea_gps_server.py
 
 ## Credits
 
